@@ -41,19 +41,6 @@
             this.cancel = (user, index) => {
                     this.users[index] = _previous[user._id]
                 }
-                //         this.addImg = (users.image)=>{
-                //         if (user.image.name != undefined) {
-                //                                 usersService.upload(user.image)
-                //                                 this.image.push(`img/${user.image.name}`)
-                //                             }
-                //                             user.image = this.image
-                //                             usersService.edit(user).then((res) => {
-                //                                 this.users = res.config.data
-                //                             })
-                // this.editMode = false
-                // }
-
-
-        }]
+                      }]
     })
 })(angular.module('app.users'))
