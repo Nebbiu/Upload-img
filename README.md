@@ -1,1 +1,7 @@
-Fichier controller, routes, app, service, html
+Upload img required change in:
+
+-Controller
+-Routes
+-App
+-Service
+-Our component
