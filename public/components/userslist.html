@@ -1,0 +1,45 @@
+<table >
+    <tr>
+        <th>Age</th>
+        <th>Nom</th>
+        <th>Adresse</th>
+        <th>Image</th>
+    </tr>
+    <tr>
+
+        <td><input type="text" name="age" ng-model="$ctrl.selectedUser.age"></td>
+        <td><input type="text" name="name" ng-model="$ctrl.selectedUser.name"></td>
+        <td><input type="text" name="adress" ng-model="$ctrl.selectedUser.adress"></td>
+        <td>
+          <div style="background-image: url({{image}})" class="projectimage"></div>
+          <div class="group imageprojectedit" >
+              <file type="file" ng-model="$ctrl.selectedUser.image" accept="image/jpeg, image/png, image/jpg"></file>
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label>Image</label>
+          </div>
+        </td>
+        <td colspan="2">
+            <button type="button" name="button" ng-click="$ctrl.add()">Ajouter</button>
+        </td>
+    </tr>
+    <tr ng-repeat="user in $ctrl.users">
+        <td><button type="button" name="button" ng-click="$ctrl.delete(user,$index)">Supprimer</button></td>
+        <td><button type="button" name="button" ng-click="$ctrl.edit(user)">{{(user.editMode ? 'Valider' :'Modifier')}}</button></td>
+        <td><button type="button" name="button" ng-if="user.editMode" ng-click="$ctrl.cancel(user, $index)">Annuer</button></td>
+
+        <td><span ng-if="!user.editMode">{{user.age}}</span><input type="text" name="age" ng-model="user.age" ng-if="user.editMode"></td>
+        <td><span ng-if="!user.editMode">{{user.name}}</span><input type="text" name="name" ng-model="user.name" ng-if="user.editMode"></td>
+        <td><span ng-if="!user.editMode">{{user.adress}}</span><input type="text" name="adress" ng-model="user.adress" ng-if="user.editMode"></td>
+        <td><span><img ng-src="{{user.image}}"></span></td>
+    </tr>
+
+</table>
+
+<img src="https://avatars.githubusercontent.com/u/Nebbiu" alt="">
+
+
+<!-- Récupération des images du projet -->
+         <!-- <div ng-repeat="image in $ctrl.users.image | limitTo:$ctrl.limit : $ctrl.begin" ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}"> -->
+
+<!-- </div> -->
